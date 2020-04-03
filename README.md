@@ -2,9 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
+
+## Software versions used
+
+Download [NodeJS](https://nodejs.org/en/download/) 12.16.1.
+
+Download [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+
+If problems persist when trying to run a local development server, download [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) 1.22.4.
+
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Running `ng serve --open` will open the localhost for you.
 
 ## Code scaffolding
 
