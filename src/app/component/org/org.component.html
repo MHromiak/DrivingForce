@@ -1,0 +1,175 @@
+ <!-- <p class="heading md-headline" style="font-size: 70px">
+  <b>Welcome Organizer!</b>
+</p> -->
+<button routerLink="">Log out</button>
+
+<!-- <div style="padding: 50px;">
+  <div>
+    <div>
+      <h1>Add a Job</h1>
+      <div class="row" [hidden]="!showAddNewJob">
+        <div class="col-md-4">
+          <div class="row">
+            <mat-form-field class="JobName">
+              <input matInput placeholder=" Job Name"
+                     (keyup)="createNewJobProp($event, 'name')">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="Org Name">
+              <input matInput
+                     (keyup)="createNewJobProp($event, 'orgName')"
+                     placeholder="Organization Name">
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="List of Volunteers">
+              <input matInput
+                     (keyup)="createNewJobProp($event, 'volunteers')"
+                     placeholder="List of Volunteers">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <mat-form-field class="Location">
+              <input matInput
+                     (keyup)="createNewJobProp($event, 'location')"
+                     placeholder=" Location">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field class="Start Time">
+              <input matInput placeholder=" Start Time"
+                     (keyup)="createNewJobProp($event, 'start')">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field class="End Time">
+              <input matInput
+                     (keyup)="createNewJobProp($event, 'end')"
+                     placeholder=" End Time">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-4">
+
+          <div class="row">
+            <mat-form-field class="description">
+            <textarea matInput placeholder="Description"
+                      (keyup)="createNewJobProp($event, 'description')">
+            </textarea>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <button (click)="createNewJob();" mat-button mat-raised-button> Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: relative;">
+    <button style="float: right;" (click)="showAddJob()" mat-raised-button color="primary">
+      <i class="fa fa-plus-circle"></i>
+      Add New Job
+    </button>
+  </div>
+</div>   -->
+
+<!-- <mat-tab-group class="demo-tab-group">
+  <div *ngFor="let job of allJob">
+    <mat-tab [label]="getVal(job).name">
+      <div class="demo-tab-content">
+        <div class="row" style="padding: 50px;">
+          <div class="col-md-4">
+            <div class="row">
+              <mat-form-field class="JobName">
+                <input matInput placeholder=" Job Name"
+                       [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'name')" [value]="getVal(job).name">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="Org Name">
+                <input matInput
+                       [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'orgName')"
+                       placeholder="Organization Name" [value]="job.payload.val().orgName">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="Volunteers">
+                <input matInput
+                       [disabled]="true" (keyup)="updateJobProp($event, job, 'volunteers')"
+                       placeholder="Volunteers" [value]="job.payload.val().volunteers">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <mat-form-field class="Location">
+                <input matInput
+                       [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'location')"
+                       placeholder=" Location" [value]="job.payload.val().location">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="Start Time">
+                <input matInput placeholder=" Start Time"
+                       [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'start')"
+                       [value]="job.payload.val().start">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="End Time">
+                <input matInput
+                       [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'end')"
+                       placeholder=" End Time" [value]="job.payload.val().end">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-4">
+
+            <div class="row">
+              <mat-form-field class="description">
+              <textarea matInput placeholder="Description"
+                        [disabled]="!showUpdateJob" (keyup)="updateJobProp($event, job, 'description')"
+                        [value]="job.payload.val().description">
+              </textarea>
+              </mat-form-field>
+            </div>
+            <div class="row" [hidden]="!showUpdateJob">
+              <button (click)="updateJob(job);showUpdateJob=false" mat-button mat-raised-button> Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding: 50px;" [hidden]="!job.showChat">
+        <div class="row" style="width: 100%; ">
+          <div style="width: 100%; height: 300px; border: 1px solid grey; padding: 20px; overflow: auto;">
+            <div *ngFor="let chat of job.chatContent">
+              <b>{{chat.payload.val().sender}}: </b> {{chat.payload.val().content}}
+            </div>
+          </div>
+        </div>
+        <div class="row" style="width: 100%;">
+          <mat-form-field style="width: 100%;">
+            <input style="width: 100%;" matInput placeholder="Chat to volunteer"
+                   [value]="job.chatText.content"
+                   (keyup)="onTypingChat($event, job)">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="showChat(job)">Chat with volunteer</button>
+      <button mat-raised-button color="primary" [hidden]="showUpdateJob"
+              (click)="showUpdate(job);showUpdateJob=!showUpdateJob">Update Job
+      </button>
+      <button mat-raised-button color="warn" (click)="deleteJob(job.key)">Delete Job</button>
+    </mat-tab>
+  </div>
+</mat-tab-group>
+ -->
+

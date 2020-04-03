@@ -1,0 +1,134 @@
+<!-- <div class="row" style="width: 100%; height: 100vh; padding: 30px;">
+  <div class="col-md-6" style="overflow: auto; height: 100vh;">
+    <div style="">
+      <div *ngFor="let job of allJob">
+        <mat-card [hidden]="job.jobApplied">
+          <mat-card-title>
+            Job: {{job.payload.val().name}}
+          </mat-card-title>
+          <mat-divider></mat-divider>
+
+          <mat-card-content style="padding: 20px;">
+            <p>
+              Description: {{job.payload.val().description}}
+            </p>
+            <p>
+              Destination: {{job.payload.val().location}}
+            </p>
+            <p>
+              Volunteers: {{job.payload.val().volunteers}}
+            </p>
+            <p>
+              Status: {{job.payload.val().status | status}}
+            </p>
+            <p>
+              Start: {{job.payload.val().start}}
+            </p>
+            <p>
+              End: {{job.payload.val().end}}
+            </p>
+
+            <div class="row" style="width: 100%;" [hidden]="!job.showChat">
+              <div class="row" style="width: 100%;">
+                <div style="width: 100%; height: 300px; border: 1px solid grey; padding: 20px; overflow: auto;">
+                  <div *ngFor="let chat of job.chatContent">
+                  <b>{{chat.payload.val().sender}}: </b> {{chat.payload.val().content}}
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="width: 100%;">
+                <mat-form-field style="width: 100%;">
+                  <input style="width: 100%;" matInput placeholder="Chat to organizer"
+                         [value]="job.chatText.content"
+                         (keyup)="onTypingChat($event, job)">
+                </mat-form-field>
+              </div>
+            </div>
+
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button [disabled]="job.payload.val().status != 0" mat-button mat-raised-button color="primary" (click)="applyJob(job)">
+              <i class="fa fa-edit"></i>
+              Apply
+            </button>
+            <button (click)="getDirection(job)" mat-button mat-raised-button color="primary">
+              <i class="fa fa-arrow-circle-up"></i>
+              Direction
+            </button>
+            <button mat-button mat-raised-button color="primary" (click)="showChat(job)">
+              <i class="fa fa-user"></i>
+              Chat with organizor
+            </button>
+          </mat-card-actions>
+
+        </mat-card>
+
+        <div class="container" [hidden]="!job.jobApplied">
+          <h1>Volunteer Form</h1>
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" [value]="userInfo.name" (keyup)="onTypingInfo($event, 'name')" class="form-control" id="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="text" [value]="userInfo.email" (keyup)="onTypingInfo($event, 'email')" class="form-control" id="email">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="text" [value]="userInfo.phone" (keyup)="onTypingInfo($event, 'phone')" class="form-control" id="phone">
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" [value]="userInfo.address" (keyup)="onTypingInfo($event, 'address')" class="form-control" id="address">
+            </div>
+
+            <button type="submit" mat-button mat-raised-button color="primary" (click)="job.jobApplied = false">Cancel</button>
+            <button type="submit" mat-button mat-raised-button color="primary" (click)="updateVolunteer(job)">Apply</button>
+
+          </form>
+      </div>
+
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <ngui-map style="height: 100vh; " zoom="0" center="40.771, -73.974">
+      <directions-renderer
+        [suppressMarkers]="true"
+        [draggable]="true"
+        panel="#my-panel"
+        (directions_changed)="directionsChanged()"
+        [directions-request]="direction">
+      </directions-renderer>
+    </ngui-map>
+  </div>
+</div> -->
+
+<div style="height: 100vh;" class="text-center">
+<h3>Thank you for volunteering!</h3>
+
+<div style="top: 30%; position: relative;">
+<button style="height: 100px; width: 300px;" mat-button color="primary"
+routerLink="volunteer-apply-btn.html">
+<h3>
+Job Apply
+</h3>
+</button>
+
+<button style="height: 100px; width: 300px;" mat-button color="primary"
+routerLink="volunteer-apply-btn.html">
+<h3>
+Get Directions
+</h3>
+</button>
+</div>
+</div>
+
+
+Volunteer works!
