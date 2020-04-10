@@ -9,7 +9,6 @@ import { VolunteerComponent } from './component/volunteer/volunteer.component';
 import { VolunteerApplyBtnComponent } from './component/volunteer-apply-btn/volunteer-apply-btn.component';
 import { VolunteerDirectionBtnComponent } from './component/volunteer-direction-btn/volunteer-direction-btn.component';
 
-import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -18,13 +17,12 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponent,
     VolunteerComponent,
     VolunteerApplyBtnComponent,
-    VolunteerDirectionBtnComponent
+    VolunteerDirectionBtnComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

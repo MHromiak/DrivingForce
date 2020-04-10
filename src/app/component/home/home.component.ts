@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  login_volunteer() {
-    // alert("Clicked vol");
+  login_volunteer(email, password) {
     this.message = "Logging in as a volunteer";
     this.authService.login_volunteer().subscribe(() => {
       this.setMessage();
@@ -34,14 +33,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  logout_volunteer() {
+  logout_volunteer(email, password) {
     this.authService.logout_volunteer();
     this.message = "Logging out";
     this.router.navigate(['/home']);
   }
 
-  login_org() {
-    
+  login_org(email, password) {
+    alert(email);
     this.message = "Logging in as a volunteer";
     this.authService.login_org().subscribe(() => {
       this.setMessage();
@@ -57,5 +56,14 @@ export class HomeComponent implements OnInit {
     this.authService.logout_org();
     this.message = "Logging out";
     this.router.navigate(['/home']);
+  }
+
+
+  register_org() {
+
+  }
+
+  register_vol() {
+    
   }
 }
