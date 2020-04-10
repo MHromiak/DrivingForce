@@ -1,5 +1,5 @@
 <div style="width: 100%; height: 100vh; overflow: hidden;">
-  <div class="text-center" style="font-size: 60px">
+  <div class="Title-and-icon" style="font-size: 60px">
     <b>
       Driving Force
     </b>
@@ -8,16 +8,30 @@
     </div>
   </div>
 
-  <div class="vol-login">
-    <button (click)="login_volunteer()">Log in as a Volunteer</button> 
-    <small>Register as a volunteer</small>
+
+
+<div class="login">
+  <h1>Welcome back</h1>
+  <!-- <form method="post"> -->
+      <input type="text" name="u" placeholder="E-mail" required="required" />
+      <input type="password" name="p" placeholder="Password" required="required" />
+
+      <div class="vol-login">
+        <button (click)="login_volunteer()">Log in as a Volunteer</button> 
+        <small>Register as a volunteer</small>
+    </div>
+     
+      <div class="org-login">
+        <button (click)="login_org()">Log in as an Organization</button>
+        <small>Register an organization</small>
+        
+    </div>
+  <!-- </form> -->
 </div>
- 
-  <div class="org-login">
-    <button (click)="login_org()">Log in as an Organization</button>
-    <small>Register an organization</small>
-    
-</div>
+
+
+
+  
   <!-- <div class="row" style="height: 100%;">
     <div class="col-md-6" style="height: 100%;">
       <div class="text-center" style="height: 100%;">
