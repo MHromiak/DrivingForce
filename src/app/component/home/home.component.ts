@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   login_org(email, password) {
-    alert(email);
+    
     this.message = "Logging in as an organization";
     this.authService.login_org().subscribe(() => {
       this.setMessage();

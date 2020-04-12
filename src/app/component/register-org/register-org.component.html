@@ -6,8 +6,8 @@
     <input type="text" #addr placeholder="Location Address" required="required" id="address" />
     <input type="text" #rep placeholder="Representative name" required="required" id="representative" />
     <input type="text" #email placeholder="E-mail" required="required" id="email" />
-    <input type="text" #pass placeholder="Password" required="required" id="password" />
-    <input type="text" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
+    <input type="password" #pass placeholder="Password" required="required" id="password" />
+    <input type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
 
 </div>
 <button (click)="register_org(org_name.value, addr.value, rep.value, email.value, pass.value, passconf.value)">
