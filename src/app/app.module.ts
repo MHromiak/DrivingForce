@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatMenuModule } from '@angular/material/menu';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,12 +16,16 @@ import { VolunteerDirectionBtnComponent } from './component/volunteer-direction-
 import { RegisterVolunteerComponent } from './component/register-volunteer/register-volunteer.component';
 import { RegisterOrgComponent } from './component/register-org/register-org.component';
 
-import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -29,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
     VolunteerDirectionBtnComponent,
     RegisterVolunteerComponent,
     RegisterOrgComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +50,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
+    MatSliderModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

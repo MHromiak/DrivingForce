@@ -55,10 +55,7 @@ constructor(public authService: AuthService, public router: Router) {
 
 }
 
-goHome() {
-  this.authService.logout_volunteer();
-  this.router.navigate(['/home']);
-}
+
 
 
 ngOnInit(){}

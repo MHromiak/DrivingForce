@@ -45,10 +45,7 @@ export class OrgComponent implements OnInit {
   }
 
 
-  goHome() {
-    this.authService.logout_org();
-    this.router.navigate(['/home']);
-  }
+  
 //   constructor(orgService: OrgUtilService, private volunteerService: VolunteerUtilService) {
 //     this.orgService = orgService;
 //   }
