@@ -18,10 +18,8 @@ export class NavbarComponent implements OnInit {
   //TODO: can both be logged in at the same time?
   home() {
     if (this.authService.v_isLoggedIn) {
-      alert("to vol");
-      this.router.navigate(['/volunteer/register'])
+      this.router.navigate(['/volunteer'])
     } else if (this.authService.o_isLoggedIn) {
-      alert("to org");
       this.router.navigate(['organization']);
     } else {
       this.router.navigate(['/home/']);
@@ -30,11 +28,9 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     if (this.authService.v_isLoggedIn) {
-      alert("to vol");
       this.authService.logout_volunteer();
       this.router.navigate(['/home/']);
     } else if (this.authService.o_isLoggedIn) {
-      alert("to org");
       this.authService.logout_org();
       this.router.navigate(['/home/']);
     } else {

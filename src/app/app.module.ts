@@ -20,6 +20,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

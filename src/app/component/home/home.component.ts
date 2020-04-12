@@ -11,9 +11,9 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class HomeComponent implements OnInit {
   message: string;
   navbar: NavbarComponent;
-
+  show: boolean;
   constructor(public authService: AuthService, public router: Router) {
-    // this.setMessage();
+    this.show = true;
    }
 
   // setMessage() {
@@ -21,6 +21,11 @@ export class HomeComponent implements OnInit {
   // }
 
   ngOnInit() {
+  }
+
+  toggleProgress() {
+    this.show = !this.show;
+    
   }
 
   login_volunteer(email, password) {
