@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   login_org(email, password) {
     alert(email);
-    this.message = "Logging in as a volunteer";
+    this.message = "Logging in as an organization";
     this.authService.login_org().subscribe(() => {
       this.setMessage();
       if (this.authService.o_isLoggedIn) {
@@ -52,18 +52,15 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  logout_org() {
-    this.authService.logout_org();
-    this.message = "Logging out";
-    this.router.navigate(['/home']);
+
+
+
+  to_register_vol() {
+    this.router.navigate(['/register/volunteer']);
   }
 
-
-  register_org() {
-
+  to_register_org() {
+    this.router.navigate(['/register/organization']);
   }
 
-  register_vol() {
-    
-  }
 }

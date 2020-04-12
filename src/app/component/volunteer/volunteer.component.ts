@@ -1,6 +1,8 @@
 // import {OrgUtilService} from '../../service/org/org-util.service';
 // import {VolunteerUtilService} from '../../service/volunteer/volunteer-util.service';
 import {Component, ViewChild, ChangeDetectorRef, OnInit} from '@angular/core';
+import {AuthService} from '../../auth/auth.service';
+import {Router} from '@angular/router';
 // import {DirectionsRenderer} from '@ngui/map';
 // import {volunteer} from '../volunteer';
 
@@ -48,6 +50,15 @@ import {Component, ViewChild, ChangeDetectorRef, OnInit} from '@angular/core';
 
 //   constructor(private orgService: OrgUtilService, private volunteerService: VolunteerUtilService, private cdr: ChangeDetectorRef) {
 //   }
+
+constructor(public authService: AuthService, public router: Router) {
+
+}
+
+goHome() {
+  this.authService.logout_volunteer();
+  this.router.navigate(['/home']);
+}
 
 
 ngOnInit(){}
