@@ -26,6 +26,8 @@ import { RegisterVolunteerComponent } from './component/register-volunteer/regis
 import { RegisterOrgComponent } from './component/register-org/register-org.component';
 import { VolunteerStepperComponent } from './component/steppers/volunteer-stepper/volunteer-stepper.component';
 import { OrgStepperComponent } from './component/steppers/org-stepper/org-stepper.component';
+import { CreateJobComponent } from './component/job-related/create-job/create-job.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 
 
@@ -43,6 +45,8 @@ import { OrgStepperComponent } from './component/steppers/org-stepper/org-steppe
     NavbarComponent,
     VolunteerStepperComponent,
     OrgStepperComponent,
+    CreateJobComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
