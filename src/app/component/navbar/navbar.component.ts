@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  //TODO: can both be logged in at the same time?
+  //TODO: can both be logged in at the same time? Currently looks like no, but check when user accounts are implemented
   home() {
     if (this.authService.v_isLoggedIn) {
       this.router.navigate(['/volunteer'])

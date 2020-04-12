@@ -16,15 +16,7 @@ export class RegisterOrgComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register_org(org_name, address, rep_name, email, pass, passconf) {
-    this.authService.register_org(org_name, address, rep_name, email, pass, passconf).subscribe(() => {
-      if (this.authService.pass_match) {
-        this.router.navigate(['/organization']);
-      } else {
-        alert("Passwords did not match");
-      }
-     });
-  }
+  
 
   
 }
