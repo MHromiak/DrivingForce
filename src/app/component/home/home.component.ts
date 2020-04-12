@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +10,28 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   message: string;
-
+  navbar: NavbarComponent;
+  show: boolean;
   constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
+    this.show = true;
    }
 
-  setMessage() {
-    this.message = 'Logged' + (this.authService.v_isLoggedIn ? 'in' : 'out');
-  }
+  // setMessage() {
+  //   this.message = 'Logged ' + (this.authService.v_isLoggedIn ? 'in' : 'out');
+  // }
 
   ngOnInit() {
+  }
+
+  toggleProgress() {
+    this.show = !this.show;
+    
   }
 
   login_volunteer(email, password) {
     this.message = "Logging in as a volunteer";
     this.authService.login_volunteer().subscribe(() => {
-      this.setMessage();
+      // this.setMessage();
       if (this.authService.v_isLoggedIn) {
         const redirUrl = '/volunteer';
 
@@ -43,7 +50,7 @@ export class HomeComponent implements OnInit {
     
     this.message = "Logging in as an organization";
     this.authService.login_org().subscribe(() => {
-      this.setMessage();
+      // this.setMessage();
       if (this.authService.o_isLoggedIn) {
         const redirUrl = '/organization';
 

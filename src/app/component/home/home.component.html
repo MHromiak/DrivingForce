@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="width: 100%; height: 100vh; overflow: hidden;">
   <div class="Title-and-icon" style="font-size: 60px">
     <b>
@@ -18,35 +34,25 @@
       <p>{{email.value}}</p>
       <p>{{pass.value}}</p>
       <div class="vol-login" ng-init="route = '/volunteer'">
-        <button (click)="login_volunteer(email.value, pass.value);">Log in as a Volunteer</button> 
+        <button (click)="toggleProgress(); login_volunteer(email.value, pass.value)">Log in as a Volunteer</button> 
         <button (click)="to_register_vol()">Register as a volunteer</button>
       </div>
      
 
       <div class="org-login">
-        <button (click)="login_org(email.value, pass.value)">Log in as an Organization</button>
+        <button (click)="toggleProgress(); login_org(email.value, pass.value)">Log in as an Organization</button>
         <button (click)="to_register_org()">Register as an organization</button>
         
     </div>
   <!-- </form> -->
 </div>
 
-<h2>{{message}}</h2>
+<div [hidden]="show">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  <h1>{{message}}</h1>
+</div>
 
-<!-- <script>
-  function get_vol_info() {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    login_volunteer(email, password);
-  }
 
-  function get_org_info() {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    login_org(email, password);
-  }
-
-</script> -->
 
 
 
