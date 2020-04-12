@@ -1,0 +1,43 @@
+.canvas_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.canvas{
+    width: 400px;
+    height: 400px;
+    margin-top: calc(50vh - 300px);
+}
+
+.mat-card{
+    text-align: center;
+}
+
+button{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+mat-form-field{
+    width: 209px;
+}
+
+.icon{
+    height: 120px;
+    margin: 30px;
+}
+
+.welcome_message{
+    font-size: 20px;
+}
+
+.identity_selection_container{
+    display: block;
+}
+
+.identity_dropdown{
+    width: 150px;
+}

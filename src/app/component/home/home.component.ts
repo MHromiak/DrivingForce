@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   message: string;
+  hide = true;
+  identityControl = new FormControl('volunteer');
 
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
