@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatMenuModule } from '@angular/material/menu';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +16,11 @@ import { RegisterOrgComponent } from './component/register-org/register-org.comp
 
 
 
+import { MatSliderModule } from '@angular/material/slider';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +30,17 @@ import { RegisterOrgComponent } from './component/register-org/register-org.comp
     VolunteerDirectionBtnComponent,
     RegisterVolunteerComponent,
     RegisterOrgComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot(),
+    MatSliderModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
