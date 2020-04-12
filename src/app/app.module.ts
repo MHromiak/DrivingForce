@@ -8,6 +8,8 @@ import { HomeComponent } from './component/home/home.component';
 import { VolunteerComponent } from './component/volunteer/volunteer.component';
 import { VolunteerApplyBtnComponent } from './component/volunteer-apply-btn/volunteer-apply-btn.component';
 import { VolunteerDirectionBtnComponent } from './component/volunteer-direction-btn/volunteer-direction-btn.component';
+import { RegisterVolunteerComponent } from './component/register-volunteer/register-volunteer.component';
+import { RegisterOrgComponent } from './component/register-org/register-org.component';
 
 
 
@@ -18,6 +20,8 @@ import { VolunteerDirectionBtnComponent } from './component/volunteer-direction-
     VolunteerComponent,
     VolunteerApplyBtnComponent,
     VolunteerDirectionBtnComponent,
+    RegisterVolunteerComponent,
+    RegisterOrgComponent,
   ],
   imports: [
     BrowserModule,
