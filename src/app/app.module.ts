@@ -4,6 +4,22 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSliderModule } from '@angular/material/slider';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,9 +27,12 @@ import { HomeComponent } from './component/home/home.component';
 import { VolunteerComponent } from './component/volunteer/volunteer.component';
 import { VolunteerApplyBtnComponent } from './component/volunteer-apply-btn/volunteer-apply-btn.component';
 import { VolunteerDirectionBtnComponent } from './component/volunteer-direction-btn/volunteer-direction-btn.component';
-
-import { MatCardModule } from '@angular/material/card';
-
+import { RegisterVolunteerComponent } from './component/register-volunteer/register-volunteer.component';
+import { RegisterOrgComponent } from './component/register-org/register-org.component';
+import { VolunteerStepperComponent } from './component/steppers/volunteer-stepper/volunteer-stepper.component';
+import { OrgStepperComponent } from './component/steppers/org-stepper/org-stepper.component';
+import { CreateJobComponent } from './component/job-related/create-job/create-job.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +40,15 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponent,
     VolunteerComponent,
     VolunteerApplyBtnComponent,
-    VolunteerDirectionBtnComponent
+    VolunteerDirectionBtnComponent,
+    RegisterVolunteerComponent,
+    RegisterOrgComponent,
+    NavbarComponent,
+    VolunteerStepperComponent,
+    OrgStepperComponent,
+    CreateJobComponent,
+    PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +56,23 @@ import { MatCardModule } from '@angular/material/card';
     AngularFirestoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
+    MatSliderModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatProgressBarModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 // import {OrgUtilService} from '../../service/org/org-util.service';
 // import {VolunteerUtilService} from '../../service/volunteer/volunteer-util.service';
 
@@ -38,6 +40,12 @@ export class OrgComponent implements OnInit {
   showAddNewJob = false;
   private showUpdateJob = false;
 
+  constructor(public authService: AuthService, public router: Router) {
+    
+  }
+
+
+  
 //   constructor(orgService: OrgUtilService, private volunteerService: VolunteerUtilService) {
 //     this.orgService = orgService;
 //   }
