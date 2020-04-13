@@ -10,48 +10,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./org.component.css']
 })
 export class OrgComponent implements OnInit {
+
   ngOnInit() {
 
   }
-//   private orgService: any;
-//   allJob: any[] = [{
-//     jobKey: '',
-//     jobData: {
-//       name: ''
-//     },
-//     newProp: {
-//       name: '',
-//       orgName: '',
-//       description: '',
-//       volunteers: '',
-//       location: '',
-//       status: '',
-//       start: '',
-//       end: '',
-//     }
-//   }];
-//   private newJobProp: any = {
-//     name: '',
-//     orgName: '',
-//     description: '',
-//     volunteers: '',
-//     location: '',
-//     status: '0',
-//     start: '',
-//     end: ''
-//   };
-  showAddNewJob = false;
-  private showUpdateJob = false;
+
+ 
 
   constructor(public authService: AuthService, public router: Router) {
     
   }
 
   toCreateJob() {
-    this.router.navigate(['/organization/create-job'])
+    this.router.navigate(['/organization/create-job']);
   }
 
+  toJobs() {
+    this.router.navigate(['/organization/jobs']);
+  }
+
+  
+}
 
   
 
-}
+
