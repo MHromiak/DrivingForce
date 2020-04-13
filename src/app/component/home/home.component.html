@@ -1,93 +1,38 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div style="width: 100%; height: 100vh; overflow: hidden;">
-  <div class="Title-and-icon" style="font-size: 60px">
-    <b>
-      Driving Force
-    </b>
-    <div>
-      <img src="assets/charity_icon.png" style="height: 80px;" alt="">
-    </div>
+<div class="canvas_container">
+  <div class="canvas">
+    <mat-card class="login">
+      <mat-card-title>Driving Force</mat-card-title>
+      <mat-card-content>
+        <div>
+          <img src="assets/charity_icon.png" class="icon">
+          <div class="welcome_message">Facilitating social good</div>
+        </div>
+      </mat-card-content>
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input matInput type="text" #email required="required" id="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" #pass required="required" id="password" (keyup)="0" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="loginService(email.value, pass.value);">Log in</button>
+        <button mat-raised-button color="primary" (click)="registerService()">Register</button>
+        <div class="identity_selection_container">
+          <mat-form-field appearance="fill" class="identity_dropdown">
+            <mat-label>as</mat-label>
+            <mat-select [formControl]="identityControl">
+              <mat-option value="volunteer">volunteer</mat-option>
+              <mat-option value="organization">organization</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card>
+      <div class="status_message">{{message}}</div>
   </div>
-
-
-
-<div class="login">
-  <h1>Welcome back</h1>
-  <!-- <form method="post"> -->
-      <input type="text" #email placeholder="E-mail" required="required" id="email" />
-      <input type="password" #pass placeholder="Password" required="required" id="password" (keyup)="0"/>
-      <p>{{email.value}}</p>
-      <p>{{pass.value}}</p>
-      <div class="vol-login" ng-init="route = '/volunteer'">
-        <button (click)="toggleProgress(); login_volunteer(email.value, pass.value)">Log in as a Volunteer</button> 
-        <button (click)="to_register_vol()">Register as a volunteer</button>
-      </div>
-     
-
-      <div class="org-login">
-        <button (click)="toggleProgress(); login_org(email.value, pass.value)">Log in as an Organization</button>
-        <button (click)="to_register_org()">Register as an organization</button>
-        
-    </div>
-  <!-- </form> -->
-</div>
-
-<div [hidden]="show">
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  <h1>{{message}}</h1>
-</div>
-
-
-
-
-
-  
-  <!-- <div class="row" style="height: 100%;">
-    <div class="col-md-6" style="height: 100%;">
-      <div class="text-center" style="height: 100%;">
-        <h1 style="height: 50%; position: relative;">
-          <mat-card style="height: 100%; top: 30%; ">
-            <span style="position: relative; top: 30%;">
-              <button mat-button mat-raised-button routerLink="/volunteer" style="height: 80px;">
-                <span style="font-size: 60px">
-              Volunteer
-                </span>
-              </button>
-            </span>
-          </mat-card>
-        </h1>
-      </div>
-    </div>  -->
-<!-- </div> -->
-    <!-- <div class="col-md-6" style="height: 100%;">
-      <div class="text-center" style="height: 100%;">
-        <h1 style="height: 50%; position: relative;">
-          <mat-card style="height: 100%; top: 30%; ">
-            <span style="position: relative; top: 30%;">
-              <button mat-button mat-raised-button routerLink="/organizor" style="height: 80px;">
-                <span style="font-size: 60px">
-                  Organizer
-                </span>
-              </button>
-            </span>
-          </mat-card>
-        </h1>
-      </div>
-    </div> -->
- 
 </div>

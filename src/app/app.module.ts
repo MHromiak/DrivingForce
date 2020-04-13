@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
@@ -11,8 +12,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,10 +30,6 @@ import { VolunteerStepperComponent } from './component/steppers/volunteer-steppe
 import { OrgStepperComponent } from './component/steppers/org-stepper/org-stepper.component';
 import { CreateJobComponent } from './component/job-related/create-job/create-job.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -53,11 +51,17 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     MatSliderModule,
     MatMenuModule,
-    MatButtonModule,
-    MatCardModule,
     MatDatepickerModule,
     MatProgressBarModule,
     MatStepperModule,
