@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -34,6 +35,8 @@ import { VolunteerStepperComponent } from './component/steppers/volunteer-steppe
 import { OrgStepperComponent } from './component/steppers/org-stepper/org-stepper.component';
 import { CreateJobComponent } from './component/job-related/create-job/create-job.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { VolCarouselComponent } from './component/vol-carousel/vol-carousel.component';
+import { OrgCarouselComponent } from './component/org-carousel/org-carousel.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     OrgStepperComponent,
     CreateJobComponent,
     PageNotFoundComponent,
+    VolCarouselComponent,
+    OrgCarouselComponent,
+    
     
   ],
   imports: [
@@ -74,7 +80,12 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
     MatStepperModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    CarouselModule,
+    WavesModule,
 
+  ],
+  exports: [
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

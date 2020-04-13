@@ -110,26 +110,25 @@
   </div>
 </div> -->
 
-<div style="height: 100vh;" class="text-center">
-<h3>Thank you for volunteering!</h3>
-
+<p class="heading md-headline" style="font-size: 70px">
+  <b>Thank you for Volunteering!</b>
+</p>
 
 
 <div style="top: 30%; position: relative;">
-<button style="height: 100px; width: 300px;" mat-button color="primary"
-routerLink="volunteer-apply-btn.html">
+<button (click)="apply()" style="height: 100px; width: 300px;" mat-button color="primary">
 <h3>
 Job Apply
 </h3>
 </button>
 
-<button style="height: 100px; width: 300px;" mat-button color="primary"
-routerLink="volunteer-apply-btn.html">
-<h3>
-Get Directions
-</h3>
-</button>
-</div>
-</div>
+<div style="top: 30%; position: relative;">
+  <button (click)="toJobs()" style="height: 100px; width: 300px;" mat-button color="primary" routerLink="org-add-btn.html">
+  <h3>
+  My Jobs
+  </h3>
+  </button>
+
+
 
 

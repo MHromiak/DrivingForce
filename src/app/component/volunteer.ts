@@ -1,9 +1,9 @@
 export class volunteer {
 
 	constructor(
-		public name: string ="name",
+		public firstName: string ="firstName",
+		public lastName: string ="lastName",
 		public email: string ="email",
-		public phone: string ="phone number XXXXXXXXXX",
-		public address: string ="address"
+		public pass: string ="password"
 	) { }
 }

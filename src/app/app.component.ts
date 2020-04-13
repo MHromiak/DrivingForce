@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title: string;
-  items: Observable<any[]>;
-  // can inject angular firestore to get information from db
-  constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('volunteers').valueChanges();
-    console.log(this.items);
+  router: string;
+
+  constructor(public _router: Router) {
+    this.router = _router.url;
   }
+
+
 
   ngOnInit(){
     this.title = 'DrivingForce';
