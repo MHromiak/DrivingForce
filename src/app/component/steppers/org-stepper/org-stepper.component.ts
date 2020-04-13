@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 export class OrgStepperComponent implements OnInit {
   match: boolean;
   error: boolean;
+  authError: any;
   constructor(public authService: AuthService, public router: Router) {
     this.match = true;
     this.error = !this.match;
   }
 
   ngOnInit(): void {
+    this.authService.eventAuthError$.subscribe(data => {
+      this.authError = data;
+    });
   }
 
   verifyPass(pass, passconf) {
@@ -29,12 +33,13 @@ export class OrgStepperComponent implements OnInit {
   }
 
   register_org(org_name, address, rep_name, email, pass, passconf) {
-    this.authService.register_org(org_name, address, rep_name, email, pass, passconf).subscribe(() => {
-      if (this.authService.pass_match) {
-        this.router.navigate(['/organization']);
-      } else {
-        alert("Passwords did not match");
-      }
-     });
+    // this.authService.register_org(org_name, address, rep_name, email, pass, passconf).subscribe(() => {
+    //   if (this.authService.pass_match) {
+    //     this.router.navigate(['/organization']);
+    //   } else {
+    //     alert("Passwords did not match");
+    //   }
+    //  });
+    this.authService.register_org(org_name, address, rep_name, email, pass, passconf);
   }
 }

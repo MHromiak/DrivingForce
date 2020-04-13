@@ -1,4 +1,7 @@
 <h1>Come be a part of the Driving Force of change</h1>
+  <div>
+    {{ authError?.message }}
+  </div>
   <mat-vertical-stepper [linear]="true" #stepper>
     <mat-step>
         <ng-template matStepLabel>What's your organization's name?</ng-template>
