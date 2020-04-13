@@ -1,6 +1,29 @@
 
-<b>Welcome Organizer!</b>
 
+<p class="heading md-headline" style="font-size: 70px">
+  <b>Welcome Organizer!</b>
+</p>
+
+
+
+
+<div style="top: 30%; position: relative;">
+  <button (click)="toCreateJob()" style="height: 100px; width: 300px;" mat-button color="primary" routerLink="org-add-btn.html">
+  <h3>
+  Create Job
+  </h3>
+  </button>
+
+<div style="top: 30%; position: relative;">
+  <button (click)="toJobs()" style="height: 100px; width: 300px;" mat-button color="primary">
+  <h3>
+  My Jobs
+  </h3>
+  </button>
+  
+
+
+  
 
 
 <!-- <div style="padding: 50px;">
@@ -11,8 +34,7 @@
         <div class="col-md-4">
           <div class="row">
             <mat-form-field class="JobName">
-              <input matInput placeholder=" Job Name"
-                     (keyup)="createNewJobProp($event, 'name')">
+              <input matInput placeholder=" Job Name">
             </mat-form-field>
           </div>
           <div class="row">
@@ -34,22 +56,20 @@
           <div class="row">
             <mat-form-field class="Location">
               <input matInput
-                     (keyup)="createNewJobProp($event, 'location')"
+                     
                      placeholder=" Location">
             </mat-form-field>
           </div>
 
           <div class="row">
             <mat-form-field class="Start Time">
-              <input matInput placeholder=" Start Time"
-                     (keyup)="createNewJobProp($event, 'start')">
+              <input matInput placeholder=" Start Time">
             </mat-form-field>
           </div>
 
           <div class="row">
             <mat-form-field class="End Time">
               <input matInput
-                     (keyup)="createNewJobProp($event, 'end')"
                      placeholder=" End Time">
             </mat-form-field>
           </div>
@@ -59,24 +79,29 @@
           <div class="row">
             <mat-form-field class="description">
             <textarea matInput placeholder="Description"
-                      (keyup)="createNewJobProp($event, 'description')">
+                      >
             </textarea>
             </mat-form-field>
           </div>
           <div class="row">
-            <button (click)="createNewJob();" mat-button mat-raised-button> Submit</button>
+            <button mat-button mat-raised-button> Submit</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div style="position: relative;">
-    <button style="float: right;" (click)="showAddJob()" mat-raised-button color="primary">
+    <button style="float: right;" mat-raised-button color="primary">
       <i class="fa fa-plus-circle"></i>
       Add New Job
     </button>
   </div>
 </div>   -->
+
+
+
+
+
 
 <!-- <mat-tab-group class="demo-tab-group">
   <div *ngFor="let job of allJob">
