@@ -1,0 +1,50 @@
+<h1>Come be a part of the Driving Force of change</h1>
+  <mat-vertical-stepper [linear]="true" #stepper>
+    <mat-step>
+        <ng-template matStepLabel>What's your name?</ng-template>
+        <input type="text" #first placeholder="First name" required="required" id="first" />
+    <input type="text" #last placeholder="Last name" required="required" id="last" />
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>What's your e-mail address?</ng-template>
+        <input type="email" #email placeholder="e-mail" required="required" id="email" />
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Fill in your phone number</ng-template>
+        <input type="text" #ph placeholder="E-mail"  id="phone" />
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Set a password</ng-template>
+        <input type="password" #pass placeholder="Password" required="required" id="password" />
+        <input type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <div [hidden]="!match">
+            <button mat-button matStepperNext>Next</button>
+          </div>
+          <div [hidden] = "!match">
+              <h5>Passwords do not match</h5>
+          </div>
+          
+        </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="register_vol(first.value, last.value, email.value, ph.value, pass.value, passconf.value)">Join the Force</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>

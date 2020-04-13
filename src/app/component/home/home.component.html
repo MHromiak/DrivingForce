@@ -21,8 +21,8 @@
           </button>
         </mat-form-field>
         <br>
-        <button mat-raised-button (click)="login_volunteer(email.value, pass.value);">Log in</button>
-        <button mat-raised-button color="primary" (click)="to_register_vol()">Register</button>
+        <button mat-raised-button (click)="loginService(email.value, pass.value);">Log in</button>
+        <button mat-raised-button color="primary" (click)="registerService()">Register</button>
         <div class="identity_selection_container">
           <mat-form-field appearance="fill" class="identity_dropdown">
             <mat-label>as</mat-label>
@@ -32,11 +32,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <!-- <h2>{{message}}</h2> -->
       </mat-card>
-      <!-- <button mat-raised-button (click)="login_volunteer(email.value, pass.value);">Log in as a Volunteer</button>
-        <button mat-raised-button color="primary" (click)="to_register_vol()">Register as a volunteer</button>
-        <button mat-raised-button (click)="login_org(email.value, pass.value)">Log in as an Organization</button>
-        <button mat-raised-button color="primary" (click)="to_register_org()">Register as an organization</button> -->
+      <div class="status_message">{{message}}</div>
   </div>
 </div>

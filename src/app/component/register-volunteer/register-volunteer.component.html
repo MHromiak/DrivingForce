@@ -1,13 +1,1 @@
-<div class="register_volunteer">
-    <h1>Come be a part of the Driving Force of change</h1>
-    <input type="text" #first placeholder="First name" required="required" id="first" />
-    <input type="text" #last placeholder="Last name" required="required" id="last" />
-    <input type="email" #email placeholder="Representative name" required="required" id="email" />
-    <input type="text" #ph placeholder="E-mail"  id="phone" />
-    <input type="password" #pass placeholder="Password" required="required" id="password" />
-    <input type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
-
-</div>
-<button (click)="register_vol(first.value, last.value, email.value, ph.value, pass.value, passconf.value)">
-    Join the Force
-</button>
+<app-volunteer-stepper></app-volunteer-stepper>

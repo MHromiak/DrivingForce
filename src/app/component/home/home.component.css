@@ -41,3 +41,10 @@ mat-form-field{
 .identity_dropdown{
     width: 150px;
 }
+
+.status_message{
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    color: grey;
+}
