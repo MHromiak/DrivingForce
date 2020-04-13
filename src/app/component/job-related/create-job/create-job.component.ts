@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-create-job',
@@ -9,14 +10,26 @@ import {Location} from '@angular/common';
 })
 export class CreateJobComponent implements OnInit {
 
-  constructor(private router: Router, private location: Location) { }
+  constructor(
+    private db: AngularFirestore,
+    private router: Router, 
+    private location: Location) { }
 
   ngOnInit(): void {
   }
-  
 
   createJob(title, date, time, loc, desc) {
-    alert("Job created!");
-    this.location.back();
+    return this.db.doc(`Jobs/${title}`).set({
+      title: title,
+      date: date,
+      time: time,
+      loc: loc,
+      desc: desc
+    }).catch((error) => {
+      alert(error);
+    }).then(e => {
+      alert("Job created!")
+      this.location.back();
+    })
   }
 }
