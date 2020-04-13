@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -37,9 +37,20 @@ export class AuthService {
         console.log(error);
       })
       .then(userCredentials => {
-        if(userCredentials)
-          this.router.navigate(['/volunteer'])
-      });
+        if(userCredentials) {
+          this.db.doc(`Volunteers/${userCredentials.user.uid}`).get()
+            .toPromise().then(res => {
+            if (res.exists) {
+              this.router.navigate(['/volunteer'])
+            } else {
+              let err = "email is not registered as a volunteer";
+              throw new Error(err);
+            }
+        }).catch((err) => {
+          this.eventAuthError.next(err);
+        });
+      }
+    });
   }
 
   login_org(email: string, password: string) {
@@ -48,8 +59,19 @@ export class AuthService {
         this.eventAuthError.next(error);
       })
       .then(userCredentials => {
-        if(userCredentials)
-          this.router.navigate(['/organization'])
+        if(userCredentials) {
+          this.db.doc(`Organizations/${userCredentials.user.uid}`).get()
+            .toPromise().then(res => {
+              if (res.exists) {
+                this.router.navigate(['/organization'])
+              } else {
+                let err = "email is not registered as an organization";
+                throw new Error(err);
+              }
+            }).catch((error) => {
+              this.eventAuthError.next(error);
+            })
+        }
       });
   }
 
@@ -112,7 +134,7 @@ export class AuthService {
   }
 
   insertOrgData(userCredential: firebase.auth.UserCredential) {
-    return this.db.doc(`Users/${userCredential.user.uid}`).set({
+    return this.db.doc(`Organizations/${userCredential.user.uid}`).set({
       email: this.user.email,
       org_name: this.user.org_name,
       rep_name: this.user.rep_name,
@@ -121,7 +143,7 @@ export class AuthService {
   }
 
   insertVolunteerData(userCredential: firebase.auth.UserCredential) {
-    return this.db.doc(`Users/${userCredential.user.uid}`).set({
+    return this.db.doc(`Volunteers/${userCredential.user.uid}`).set({
       email: this.user.email,
       firstname: this.user.firstname,
       lastname: this.user.lastname,
