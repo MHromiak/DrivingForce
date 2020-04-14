@@ -18,7 +18,7 @@
         <mat-step>
             <ng-template matStepLabel>What's your e-mail address?</ng-template>
             <mat-form-field>
-              <input matInput type="email" #email placeholder="e-mail" required="required" id="email" />
+              <input matInput type="email" #email placeholder="E-mail" required="required" id="email" />
             </mat-form-field>
             <div>
               <button mat-raised-button matStepperNext>Next</button>
@@ -44,7 +44,7 @@
               <input matInput type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
             </mat-form-field>
             <div>
-              <button mat-raised-button matStepperNext (click)="verifyPass(pass.value, passconf.value)">Next</button>
+              <button mat-raised-button (click)="verifyPass(pass.value, passconf.value)">Next</button>
               <button mat-raised-button matStepperPrevious>Back</button>
             </div>
         </mat-step>

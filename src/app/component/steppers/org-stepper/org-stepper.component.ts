@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
 import { Router } from '@angular/router';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-org-stepper',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class OrgStepperComponent implements OnInit {
   match: boolean;
   error: boolean;
+  @ViewChild('stepper') private myStepper: MatStepper;
   constructor(public authService: AuthService, public router: Router) {
     this.match = true;
     this.error = !this.match;
@@ -18,13 +20,18 @@ export class OrgStepperComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goForward(stepper: MatStepper){
+    stepper.next();
+  }
+
   verifyPass(pass, passconf) {
-    alert("a");
     if ((pass != "" && passconf != "") && pass != passconf) {
       this.match = false;
+      alert("Passwords did not match");
     } else {
     this.match = true;
     this.error = !this.match;
+    this.goForward(this.myStepper);
     }
   }
 
