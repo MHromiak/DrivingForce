@@ -73,8 +73,11 @@ export class VolCarouselComponent implements OnInit {
 
   // get all the jobs in the db as an observable
   getAllJobs() {
-    this.db.collection('/Jobs').valueChanges();
+    // add where volunteers is not empty
+    this.jobs = this.db.collection('/Jobs').valueChanges();
   }
+
+
 
   chunk(arr, chunkSize) {
     let R = [];

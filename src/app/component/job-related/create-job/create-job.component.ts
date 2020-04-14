@@ -23,24 +23,36 @@ export class CreateJobComponent implements OnInit {
   createJob(title, date, time, loc, desc) {
     let user = this.authService.getUser();
 
-    // we add the organization email here because it is unique
-    // this allows us to find the right organization that can edit the
-    // event
-    // can also add an image link or image upload
-    return this.db.doc(`Jobs/${title}`).set({
-      title: title,
-      date: date,
-      time: time,
-      loc: loc,
-      desc: desc,
-      email: user.email,
-      volunteers: [],
-      images: []
-    }).catch((error) => {
-      alert(error);
-    }).then(e => {
-      alert("Job created!")
-      this.location.back();
-    })
+    this.db.doc(`Jobs/${title}`).get().toPromise().then(
+      (data) => {
+        if (data.exists) {
+          // throw err - job already exists, cannot create
+          alert("Job already exists");
+          return;
+        } else {
+      // we add the organization email here because it is unique
+          // this allows us to find the right organization that can edit the
+          // event
+          // can also add an image link or image upload
+          return this.db.doc(`Jobs/${title}`).set({
+            title: title,
+            date: date,
+            time: time,
+            loc: loc,
+            desc: desc,
+            email: user.email,
+            volunteers: [],
+            images: []
+          }).catch((error) => {
+            alert(error);
+          }).then(e => {
+            alert("Job created!")
+            this.location.back();
+          })
+        }
+      }
+    )
+
+    
   }
 }
