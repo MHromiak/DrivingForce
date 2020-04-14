@@ -1,3 +1,29 @@
 agm-map {
   height: 600px;
 }
+
+.canvas_container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.canvas{
+  width: 400px;
+  height: 600px;
+  margin-top: calc(50vh - 300px);
+}
+
+mat-card-title {
+  font-size: x-large;
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;;
+}
+
+button {
+  display: block;
+  height: 100px; width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
