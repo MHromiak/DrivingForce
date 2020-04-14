@@ -23,7 +23,11 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router) { }
+    private router: Router) { this.user = {}; }
+
+  getUser() {
+    return this.user;
+  }
 
   getUserState() {
     return this.afAuth.authState;
@@ -38,6 +42,7 @@ export class AuthService {
       })
       .then(userCredentials => {
         if(userCredentials) {
+          this.user.uid = userCredentials.user.uid;
           this.db.doc(`Volunteers/${userCredentials.user.uid}`).get()
             .toPromise().then(res => {
             if (res.exists) {
@@ -60,6 +65,7 @@ export class AuthService {
       })
       .then(userCredentials => {
         if(userCredentials) {
+          this.user.uid = userCredentials.user.uid;
           this.db.doc(`Organizations/${userCredentials.user.uid}`).get()
             .toPromise().then(res => {
               if (res.exists) {
@@ -138,7 +144,8 @@ export class AuthService {
       email: this.user.email,
       org_name: this.user.org_name,
       rep_name: this.user.rep_name,
-      address: this.user.address
+      address: this.user.address,
+      jobscreated: []
     })
   }
 
@@ -147,7 +154,8 @@ export class AuthService {
       email: this.user.email,
       firstname: this.user.firstname,
       lastname: this.user.lastname,
-      pnumber: this.user.pnumber
+      phone: this.user.pnumber,
+      jobsregistered: []
     })
   }
 }

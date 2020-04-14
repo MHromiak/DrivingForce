@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vol-carousel',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vol-carousel.component.css']
 })
 export class VolCarouselComponent implements OnInit {
+
+  private jobs: Observable<any>;
+
+  constructor(private db: AngularFirestore) {}
+
   cards = [
     {
       title: 'Card Title 1',
@@ -63,6 +70,11 @@ export class VolCarouselComponent implements OnInit {
     },
   ];
   slides: any = [[]];
+
+  // get all the jobs in the db as an observable
+  getAllJobs() {
+    this.db.collection('/Jobs').valueChanges();
+  }
 
   chunk(arr, chunkSize) {
     let R = [];

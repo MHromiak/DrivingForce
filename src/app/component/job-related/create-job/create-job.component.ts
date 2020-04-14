@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-create-job',
@@ -11,6 +12,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class CreateJobComponent implements OnInit {
 
   constructor(
+    private authService: AuthService,
     private db: AngularFirestore,
     private router: Router, 
     private location: Location) { }
@@ -19,12 +21,21 @@ export class CreateJobComponent implements OnInit {
   }
 
   createJob(title, date, time, loc, desc) {
+    let user = this.authService.getUser();
+
+    // we add the organization email here because it is unique
+    // this allows us to find the right organization that can edit the
+    // event
+    // can also add an image link or image upload
     return this.db.doc(`Jobs/${title}`).set({
       title: title,
       date: date,
       time: time,
       loc: loc,
-      desc: desc
+      desc: desc,
+      email: user.email,
+      volunteers: [],
+      images: []
     }).catch((error) => {
       alert(error);
     }).then(e => {
