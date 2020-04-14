@@ -44,7 +44,7 @@
               <input matInput type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
             </mat-form-field>
             <div>
-              <button mat-raised-button matStepperNext (click)="verifyPass(pass.value, passconf.value)">Next</button>
+              <button mat-raised-button (click)="verifyPass(pass.value, passconf.value)">Next</button>
               <button mat-raised-button matStepperPrevious>Back</button>
             </div>
         </mat-step>
