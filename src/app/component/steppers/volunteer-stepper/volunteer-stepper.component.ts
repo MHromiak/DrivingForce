@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
 import { Router } from '@angular/router';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-volunteer-stepper',
@@ -11,6 +12,7 @@ export class VolunteerStepperComponent implements OnInit {
   match: boolean;
   error: boolean;
   authError: any;
+  @ViewChild('stepper') private myStepper: MatStepper;
   ngOnInit() {
     this.match = true;
     this.error = !this.match;
@@ -19,18 +21,23 @@ export class VolunteerStepperComponent implements OnInit {
     });
   }
 
+  goForward(stepper: MatStepper){
+    stepper.next();
+  }
+
   constructor(private authService: AuthService, private router: Router) {
 
   }
 
 
   verifyPass(pass, passconf) {
-    alert("a");
     if ((pass != "" && passconf != "") && pass != passconf) {
       this.match = false;
+      alert("Passwords did not match");
     } else {
     this.match = true;
     this.error = !this.match;
+    this.goForward(this.myStepper);
     }
   }
 
