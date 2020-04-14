@@ -33,6 +33,8 @@ import { CreateJobComponent } from './component/job-related/create-job/create-jo
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 import { VolCarouselComponent } from './component/vol-carousel/vol-carousel.component';
 import { OrgCarouselComponent } from './component/org-carousel/org-carousel.component';
+import { OrgComponent } from './component/org/org.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { OrgCarouselComponent } from './component/org-carousel/org-carousel.comp
     PageNotFoundComponent,
     VolCarouselComponent,
     OrgCarouselComponent,
-    
+    OrgComponent,
     
   ],
   imports: [

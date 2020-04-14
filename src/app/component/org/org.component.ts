@@ -11,14 +11,13 @@ import { Router } from '@angular/router';
 })
 export class OrgComponent implements OnInit {
 
-  ngOnInit() {
-
-  }
-
- 
 
   constructor(public authService: AuthService, public router: Router) {
     
+  }
+
+  ngOnInit() {
+
   }
 
   toCreateJob() {
