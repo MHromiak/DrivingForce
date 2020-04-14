@@ -21,9 +21,9 @@ export class VolunteerStepperComponent implements OnInit {
 
 
   verifyPass(pass, passconf) {
-    alert("a");
     if ((pass != "" && passconf != "") && pass != passconf) {
       this.match = false;
+      alert("Passwords did not match");
     } else {
     this.match = true;
     this.error = !this.match;
