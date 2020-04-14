@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { CreateJobComponent } from './component/job-related/create-job/create-job.component';
 import { OrgCarouselComponent } from './component/org-carousel/org-carousel.component';
 import { VolCarouselComponent } from './component/vol-carousel/vol-carousel.component';
+import { AcceptJobComponent } from './component/job-related/accept-job/accept-job.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +21,8 @@ const routes: Routes = [
   
   { path: 'volunteer', component: VolunteerComponent },
   { path: 'volunteer/jobs', component: VolCarouselComponent },
+  { path: 'volunteer/apply', component: AcceptJobComponent},
+
   { path: 'register/volunteer', component: RegisterVolunteerComponent },
   { path: 'register/organization', component: RegisterOrgComponent },
 

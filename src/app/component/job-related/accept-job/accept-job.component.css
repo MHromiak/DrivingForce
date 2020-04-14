@@ -1,0 +1,14 @@
+.canvas_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .canvas{
+    width: 1140px;
+    margin-top: calc(50vh - 300px);
+  }
+
+  mdb-card{
+    width: 350px;
+  }
