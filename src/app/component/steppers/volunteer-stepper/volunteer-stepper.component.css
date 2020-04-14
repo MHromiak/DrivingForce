@@ -10,7 +10,7 @@
   margin-top: calc(50vh - 300px);
 }
 
-mat-title {
+mat-card-title {
   font-size: x-large;
   display: block;
   text-align: center;
@@ -25,10 +25,10 @@ button {
 }
 
 .mat-stepper-vertical {
-    margin-top: 8px;
-    margin-left: 15px;
-  }
-  
-  .mat-form-field {
-    margin-top: 16px;
-  }
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
