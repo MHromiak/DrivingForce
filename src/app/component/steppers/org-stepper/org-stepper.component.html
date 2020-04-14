@@ -1,57 +1,64 @@
-<h1>Come be a part of the Driving Force of change</h1>
-  <mat-vertical-stepper [linear]="true" #stepper>
-    <mat-step>
-        <ng-template matStepLabel>What's your organization's name?</ng-template>
-        <input type="text" #org_name placeholder="Organization name" required="required" id="org_name" />
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Where are you located?</ng-template>
-        <input type="text" #addr placeholder="Location Address" required="required" id="address" />
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Who will represent the company during contact?</ng-template>
-        <input type="text" #rep placeholder="Representative name" required="required" id="representative" />
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>What is the contact's e-mail address?</ng-template>
-        <input type="text" #email placeholder="E-mail" required="required" id="email" />
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-    </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>Set a password</ng-template>
-        <input type="password" #pass placeholder="Password" required="required" id="password" />
-        <input type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <div [hidden]="!match">
-            <button mat-button matStepperNext>Next</button>
+<div class="canvas_container">
+  <div class="canvas">
+    <mat-card>
+      <mat-card-title>Come be a part of the Driving Force of change</mat-card-title>
+      <mat-vertical-stepper [linear]="true" #stepper>
+        <mat-step>
+            <ng-template matStepLabel>What's your organization's name?</ng-template>
+            <mat-form-field>
+              <input matInput type="text" #org_name placeholder="Organization name" required="required" id="org_name" />
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Where are you located?</ng-template>
+            <mat-form-field>
+              <input matInput type="text" #addr placeholder="Location Address" required="required" id="address" />
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+              <button mat-raised-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Who will represent the company during contact?</ng-template>
+            <mat-form-field>
+              <input matInput type="text" #rep placeholder="Representative name" required="required" id="representative" />
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+              <button mat-raised-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>What is the contact's e-mail address?</ng-template>
+            <mat-form-field>
+              <input matInput type="text" #email placeholder="E-mail" required="required" id="email" />
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext>Next</button>
+              <button mat-raised-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Set a password</ng-template>
+          <mat-form-field>
+            <input matInput type="password" #pass placeholder="Password" required="required" id="password" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" #passconf placeholder="Password (Confirm)" required="required" id="password_confirmation" />
+          </mat-form-field>
+          <div>
+            <button mat-raised-button (click)="verifyPass(pass.value, passconf.value)">Next</button>
+            <button mat-raised-button matStepperPrevious>Back</button>
           </div>
-          <div [hidden] = "!match">
-              <h5>Passwords do not match</h5>
+      </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          <div>
+            <button mat-raised-button (click)="register_org(org_name.value, addr.value, rep.value, email.value, pass.value, passconf.value)">Join the Force</button>
           </div>
-          
-        </div>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="register_org(org_name.value, addr.value, rep.value, email.value, pass.value, passconf.value)">Join the Force</button>
-      </div>
-    </mat-step>
-  </mat-vertical-stepper>
+        </mat-step>
+      </mat-vertical-stepper>
