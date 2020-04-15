@@ -120,6 +120,7 @@ export class AuthService {
 
         this.insertOrgData(userCredentials)
           .then(() => {
+            this.o_isLoggedIn = true;
             this.router.navigate(['/organization']);
           })
       }).catch((error) => {
@@ -146,6 +147,7 @@ export class AuthService {
 
         this.insertVolunteerData(userCredentials)
           .then(() => {
+            this.v_isLoggedIn = true;
             this.router.navigate(['/volunteer']);
           })
       }).catch((error) => {
