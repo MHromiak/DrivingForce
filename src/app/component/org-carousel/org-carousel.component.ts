@@ -36,7 +36,7 @@ constructor() {
       location: "1401 Peachtree St NE​​Atlanta, GA 30309",
       description: 'Volunteers are needed to help an effort to clean up the litter around the areas of midtown! Wewill be based in a canopy in front of the address. Come by anytime and help us clean up thestreets of our beautiful city!',
       buttonText: 'I can help!',
-      img: '../../assets/bid.png'
+      img: '../../assets/litter.jpg'
     },
     {
       title: 'Testing Assistance',
