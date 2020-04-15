@@ -10,10 +10,12 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  authError: any;
   message: string;
   hide = true;
   options: FormGroup;
   identityControl = new FormControl("volunteer");
+  user: firebase.User;
 
   navbar: NavbarComponent;
   show: boolean;
@@ -25,6 +27,9 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.authService.eventAuthError$.subscribe(data => {
+      this.authError = data;
+    })
   }
 
   toggleProgress() {
@@ -33,9 +38,9 @@ export class HomeComponent implements OnInit {
 
   loginService(email, password){
     if (this.identityControl.value == "volunteer"){
-      this.login_volunteer(email, password);
+      this.authService.login_volunteer(email, password);
     } else {
-      this.login_org(email, password);
+      this.authService.login_org(email, password);
     }
   }
 
@@ -47,36 +52,36 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  login_volunteer(email, password) {
-    this.message = "logging in as a volunteer";
-    this.authService.login_volunteer().subscribe(() => {
-      // this.setMessage();
-      if (this.authService.v_isLoggedIn) {
-        const redirUrl = '/volunteer';
+  // login_volunteer(email, password) {
+  //   this.message = "logging in as a volunteer";
+  //   this.authService.login_volunteer().subscribe(() => {
+  //     // this.setMessage();
+  //     if (this.authService.v_isLoggedIn) {
+  //       const redirUrl = '/volunteer';
 
-        this.router.navigate([redirUrl]);
-      }
-    });
-  }
+  //       this.router.navigate([redirUrl]);
+  //     }
+  //   });
+  // }
 
-  logout_volunteer(email, password) {
-    this.authService.logout_volunteer();
-    this.message = "logging out";
-    this.router.navigate(['/home']);
-  }
+  // logout_volunteer() {
+  //   this.authService.logout();
+  //   this.message = "logging out";
+  //   this.router.navigate(['/home']);
+  // }
 
-  login_org(email, password) {
+  // login_org(email, password) {
     
-    this.message = "logging in as an organization";
-    this.authService.login_org().subscribe(() => {
-      // this.setMessage();
-      if (this.authService.o_isLoggedIn) {
-        const redirUrl = '/organization';
+  //   this.message = "logging in as an organization";
+  //   this.authService.login_org().subscribe(() => {
+  //     // this.setMessage();
+  //     if (this.authService.o_isLoggedIn) {
+  //       const redirUrl = '/organization';
 
-        this.router.navigate([redirUrl]);
-      }
-    });
-  }
+  //       this.router.navigate([redirUrl]);
+  //     }
+  //   });
+  // }
 
   to_register_vol() {
     this.router.navigate(['/register/volunteer']);

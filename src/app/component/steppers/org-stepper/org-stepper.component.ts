@@ -11,6 +11,7 @@ import { MatStepper } from '@angular/material/stepper';
 export class OrgStepperComponent implements OnInit {
   match: boolean;
   error: boolean;
+  authError: any;
   @ViewChild('stepper') private myStepper: MatStepper;
   constructor(public authService: AuthService, public router: Router) {
     this.match = true;
@@ -18,6 +19,9 @@ export class OrgStepperComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.eventAuthError$.subscribe(data => {
+      this.authError = data;
+    });
   }
 
   goForward(stepper: MatStepper){
@@ -36,12 +40,13 @@ export class OrgStepperComponent implements OnInit {
   }
 
   register_org(org_name, address, rep_name, email, pass, passconf) {
-    this.authService.register_org(org_name, address, rep_name, email, pass, passconf).subscribe(() => {
-      if (this.authService.pass_match) {
-        this.router.navigate(['/organization']);
-      } else {
-        alert("Passwords did not match");
-      }
-     });
+    // this.authService.register_org(org_name, address, rep_name, email, pass, passconf).subscribe(() => {
+    //   if (this.authService.pass_match) {
+    //     this.router.navigate(['/organization']);
+    //   } else {
+    //     alert("Passwords did not match");
+    //   }
+    //  });
+    this.authService.register_org(org_name, address, rep_name, email, pass, passconf);
   }
 }

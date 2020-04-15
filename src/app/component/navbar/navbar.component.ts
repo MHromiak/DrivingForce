@@ -27,14 +27,15 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    if (this.authService.v_isLoggedIn) {
-      this.authService.logout_volunteer();
-      this.router.navigate(['/home/']);
-    } else if (this.authService.o_isLoggedIn) {
-      this.authService.logout_org();
-      this.router.navigate(['/home/']);
-    } else {
-      alert("You are not logged in");
-    }
+    this.authService.logout();
+    // if (this.authService.v_isLoggedIn) {
+    //   this.authService.logout_volunteer();
+    //   this.router.navigate(['/home/']);
+    // } else if (this.authService.o_isLoggedIn) {
+    //   this.authService.logout_org();
+    //   this.router.navigate(['/home/']);
+    // } else {
+    //   alert("You are not logged in");
+    // }
   }
 }

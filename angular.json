@@ -126,6 +126,10 @@
               "devServerTarget": "spring3300pr2:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

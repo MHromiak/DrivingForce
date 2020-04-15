@@ -11,10 +11,14 @@ import { MatStepper } from '@angular/material/stepper';
 export class VolunteerStepperComponent implements OnInit {
   match: boolean;
   error: boolean;
+  authError: any;
   @ViewChild('stepper') private myStepper: MatStepper;
   ngOnInit() {
     this.match = true;
     this.error = !this.match;
+    this.authService.eventAuthError$.subscribe(data => {
+      this.authError = data;
+    });
   }
 
   goForward(stepper: MatStepper){
@@ -38,13 +42,14 @@ export class VolunteerStepperComponent implements OnInit {
   }
 
   register_vol(first_name, last_name, email, ph, pass, passconf) {
-    this.authService.register_vol(first_name, last_name, email, ph, pass, passconf).subscribe(() => {
-      if (this.authService.pass_match) {
-        this.router.navigate(['/volunteer']);
-      } else {
-        alert("Passwords did not match");
-      }
-     });
+    // this.authService.register_vol(first_name, last_name, email, ph, pass, passconf).subscribe(() => {
+    //   if (this.authService.pass_match) {
+    //     this.router.navigate(['/volunteer']);
+    //   } else {
+    //     alert("Passwords did not match");
+    //   }
+    //  });
+    this.authService.register_vol(first_name, last_name, email, ph, pass, passconf);
   }
 
 

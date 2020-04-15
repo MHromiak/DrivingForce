@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "spring3300pr2",
+      "public": "dist/spring3300pr2",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -16,12 +16,13 @@ export class RegisterVolunteerComponent implements OnInit {
   }
 
   register_vol(first_name, last_name, email, ph, pass, passconf) {
-    this.authService.register_vol(first_name, last_name, email, ph, pass, passconf).subscribe(() => {
-      if (this.authService.pass_match) {
-        this.router.navigate(['/volunteer']);
-      } else {
-        alert("Passwords did not match");
-      }
-     });
+    // this.authService.register_vol(first_name, last_name, email, ph, pass, passconf).subscribe(() => {
+    //   if (this.authService.pass_match) {
+    //     this.router.navigate(['/volunteer']);
+    //   } else {
+    //     alert("Passwords did not match");
+    //   }
+    //  });
+    this.authService.register_vol(first_name, last_name, email, ph, pass, passconf);
   }
 }
