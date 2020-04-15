@@ -1,0 +1,14 @@
+.canvas_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .canvas{
+    width: 700px;
+    margin-top: calc(50vh - 300px);
+  }
+
+  .submit-button {
+      margin-top: 10px;
+  }

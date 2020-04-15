@@ -1,39 +1,42 @@
-<h1>What do you need help with?</h1>
+<div class="canvas_container">
+  <div class="canvas">
+    <h1>What do you need help with?</h1>
 
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Job Title</span>
-    </div>  
-    <input #title type="text" class="form-control" placeholder="Job" aria-label="Job Title" aria-describedby="basic-addon1">
-  </div>
-  
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Date</span>
-    </div> 
-    <input #date type="text" class="form-control" placeholder="mm/dd/yyyy" aria-label="mm/dd/yyyy" aria-describedby="basic-addon2">
-  </div>
-
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Time</span>
-    </div>  
-    <input #time type="text" class="form-control" placeholder="hh:mm A/PM" aria-label="hh:mm A/PM" aria-describedby="basic-addon1">
-  </div>
-
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Location</span>
-    </div>  
-    <input #loc type="text" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
-  </div>
-  
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Description</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Job Title</span>
+      </div>  
+      <input #title type="text" class="form-control" placeholder="Job" aria-label="Job Title" aria-describedby="basic-addon1">
     </div>
-    <textarea #desc class="form-control" aria-label="Description"></textarea>
-  </div>
+    
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Date</span>
+      </div> 
+      <input #date type="text" class="form-control" placeholder="mm/dd/yyyy" aria-label="mm/dd/yyyy" aria-describedby="basic-addon2">
+    </div>
 
-  <a class="nav-link waves-light" mdbWavesEffect (click)='createJob(title.value, date.value, time.value, loc.value, desc.value)'><mdb-icon fas icon="car"></mdb-icon> Submit<span class="sr-only">(current)</span></a>
-  
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Time</span>
+      </div>  
+      <input #time type="text" class="form-control" placeholder="hh:mm A/PM" aria-label="hh:mm A/PM" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Location</span>
+      </div>  
+      <input #loc type="text" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+    </div>
+    
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      <textarea #desc class="form-control" aria-label="Description"></textarea>
+    </div>
+
+    <a class="nav-link waves-light submit-button" mdbWavesEffect (click)='createJob(title.value, date.value, time.value, loc.value, desc.value)'><mdb-icon fas icon="car"></mdb-icon> Submit<span class="sr-only">(current)</span></a>
+  </div>
+</div> 
