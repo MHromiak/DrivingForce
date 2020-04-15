@@ -56,6 +56,7 @@ export class AuthService {
         });
       }
     });
+    this.v_isLoggedIn = true;
   }
 
   login_org(email: string, password: string) {
@@ -79,10 +80,20 @@ export class AuthService {
             })
         }
       });
+      this.o_isLoggedIn = true;
   }
 
   logout() {
-    return this.afAuth.signOut();
+    if (!(this.o_isLoggedIn  || this.v_isLoggedIn)) {
+      alert("You are not logged in");
+    } else {
+      this.o_isLoggedIn = false;
+      this.v_isLoggedIn = false;
+      this.afAuth.signOut();
+      alert("You have now been logged out");
+      this.router.navigate(['/home']);
+    }
+  
   }
 
   ////Registration////
