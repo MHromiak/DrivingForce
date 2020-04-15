@@ -1,0 +1,26 @@
+.canvas_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .canvas{
+    width: 1140px;
+    margin-top: calc(50vh - 300px);
+  }
+
+  mdb-card{
+    width: 350px;
+  }
+
+.report_button{
+    position: relative;
+    display: flex;
+    justify-content: left;
+}
+
+.report-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}

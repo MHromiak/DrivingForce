@@ -38,6 +38,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { VolCarouselComponent } from './component/vol-carousel/vol-carousel.component';
 import { OrgCarouselComponent } from './component/org-carousel/org-carousel.component';
 import { OrgComponent } from './component/org/org.component';
+import { AcceptJobComponent } from './component/job-related/accept-job/accept-job.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { OrgComponent } from './component/org/org.component';
     VolCarouselComponent,
     OrgCarouselComponent,
     OrgComponent,
+    AcceptJobComponent,
     
   ],
   imports: [
