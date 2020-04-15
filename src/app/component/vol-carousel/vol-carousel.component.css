@@ -1,14 +1,39 @@
 .canvas_container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .canvas{
-    width: 1140px;
-    margin-top: calc(50vh - 300px);
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
-  mdb-card{
-    width: 350px;
-  }
+.canvas{
+  width: 1140px;
+  margin-top: 100px;
+}
+
+mdb-card{
+  width: 350px;
+}
+
+.report-control {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.report-form{
+    margin-top: 15px;
+}
+
+mat-form-field{
+    margin-right: 10px;
+}
+
+.unassign-input {
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.unassign-button{
+  margin-left: 40px;
+}
