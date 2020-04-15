@@ -24,18 +24,16 @@
           </div>
         </mdb-carousel-item>
       </mdb-carousel>
+      <div class="report-control">
+        <div class="report-button">
+          <button mat-raised-button (click)="showHideReport()">Report a job</button>
+        </div>
+        <div [hidden]="reportUp" class="report-form">
+          <mat-form-field>
+            <input #title matInput placeholder="Job title to report">
+          </mat-form-field>
+            <button mat-button (click)="report(title.value)">Report</button>
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
-  <div class="report-button">
-      <button mat-button (click)="showHideReport()">Report a job</button>
-  </div>
-
-  
-  <div [hidden]="reportUp" class="report-form">
-      <input #title matInput placeholder="Job Title to Report">
-      <button mat-button (click)="report(title.value)">Report</button>
-
   </div>

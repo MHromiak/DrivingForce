@@ -27,7 +27,7 @@ constructor() {
       time: '8:00 AM - 8:00 PM',
       location: "Cartersville, GA",
       description: 'Various areas surrounding cartersville have been impacted by the recent storm that has rolled through our area and we need volunteers to help us clean up the damage. We will put togetherteams that will visit the surrounding areas in order to help clean up the damage. After signing upyou will be sent more details about the team you will be a part of and the area you will be helping in.',
-      img: '../../assets/cleanup.jpg'
+      img: '../../assets/cleanup.jpeg'
     },
     {
       title: 'City Cleanup',
@@ -36,7 +36,7 @@ constructor() {
       location: "1401 Peachtree St NE​​Atlanta, GA 30309",
       description: 'Volunteers are needed to help an effort to clean up the litter around the areas of midtown! Wewill be based in a canopy in front of the address. Come by anytime and help us clean up thestreets of our beautiful city!',
       buttonText: 'I can help!',
-      img: '../../assets/litter.jpg'
+      img: '../../assets/litter.jpeg'
     },
     {
       title: 'Testing Assistance',

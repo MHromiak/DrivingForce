@@ -20,7 +20,7 @@ export class AcceptJobComponent implements OnInit {
       time: '6:00 AM - 6:00 PM',
       location: "Lenox Park",
       description: 'We need volunteers to help us enforce the social distance guidelines provided by thegovernment. We will ensure that people are maintaining the 2 meter distance required by theguidelines in order to promote safety in our society. Batons, Aviators and Whistles will beprovided to all volunteers.',
-      img: '../../assets/park.jpg'
+      img: '../../assets/park.jpeg'
     },
     {
       title: 'Testing Assistance',
@@ -52,7 +52,7 @@ export class AcceptJobComponent implements OnInit {
       time: '8:00 AM - 8:00 PM',
       location: "Cartersville, GA",
       description: 'Various areas surrounding cartersville have been impacted by the recent storm that has rolled through our area and we need volunteers to help us clean up the damage. We will put togetherteams that will visit the surrounding areas in order to help clean up the damage. After signing upyou will be sent more details about the team you will be a part of and the area you will be helping in.',
-      img: '../../assets/cleanup.jpg'
+      img: '../../assets/cleanup.jpeg'
     },
     {
       title: 'City Cleanup',
@@ -61,7 +61,7 @@ export class AcceptJobComponent implements OnInit {
       location: "1401 Peachtree St NE​​Atlanta, GA 30309",
       description: 'Volunteers are needed to help an effort to clean up the litter around the areas of midtown! Wewill be based in a canopy in front of the address. Come by anytime and help us clean up thestreets of our beautiful city!',
       buttonText: 'I can help!',
-      img: '../../assets/litter.jpg'
+      img: '../../assets/litter.jpeg'
     },
     {
       title: 'Online Auction Fundraiser for COVID Relief',
@@ -78,14 +78,14 @@ export class AcceptJobComponent implements OnInit {
       time: '2:00 PM - 10:00 PM',
       location: "Stay at Home",
       description: 'We will be holding an online class for sewing Masks to send to hospitals and to people whocannot afford them. Sewing Machine is recommended, but not required. All masks that arecreated will be picked up the next day by our staff and distributed.',
-      img: '../../assets/mask.jpg'
+      img: '../../assets/mask.jpeg'
     },
     { title: 'Help me, Georgia Tech won\'t let go',
       date: "Now",
       time: "always",
       location: "everywhere",
       description: "I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE",
-      img: '../../assets/help.jpg'
+      img: '../../assets/help.jpeg'
     }
     
   ];
