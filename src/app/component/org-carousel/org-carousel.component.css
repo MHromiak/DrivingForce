@@ -6,9 +6,22 @@
   
   .canvas{
     width: 1140px;
-    margin-top: calc(50vh - 300px);
+    margin-top: 150px;
   }
 
   mdb-card{
     width: 350px;
+  }
+
+  .remove-control {
+      margin-top: 20px;
+      margin-left: 15px;
+  }
+
+  .report-form{
+      margin-top: 15px;
+  }
+
+  mat-form-field{
+      margin-right: 10px;
   }

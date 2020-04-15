@@ -21,17 +21,16 @@
         </div>
       </mdb-carousel-item>
     </mdb-carousel>
+    <div class="remove-control">
+      <div class="remove-button">
+        <button mat-raised-button (click)="showHideRemove()">Remove a job</button>
+      </div>
+      <div [hidden]="!removeUp" class="report-form">
+        <mat-form-field>
+          <input #title matInput placeholder="Job title to remove">
+        </mat-form-field>
+        <button mat-button (click)="remove(title.value)">Remove</button>
+      </div>
+    </div>
   </div>
-</div>
-
-
-<div class="remove-button">
-  <button mat-button (click)="showHideRemove()">Remove a job</button>
-</div>
-
-
-<div [hidden]="!removeUp" class="report-form">
-  <input #title matInput placeholder="Job Title to Remove">
-  <button mat-button (click)="remove(title.value)">Remove</button>
-
 </div>
