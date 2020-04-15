@@ -53,6 +53,8 @@ export class CreateJobComponent implements OnInit {
       }
     )
 
-    
+  //delete these lines after demo
+  alert("Job created");
+  this.location.back();
   }
 }

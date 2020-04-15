@@ -46,6 +46,7 @@ export class AuthService {
           this.db.doc(`Volunteers/${userCredentials.user.uid}`).get()
             .toPromise().then(res => {
             if (res.exists) {
+              this.v_isLoggedIn = true;
               this.router.navigate(['/volunteer'])
             } else {
               let err = "email is not registered as a volunteer";
@@ -56,10 +57,11 @@ export class AuthService {
         });
       }
     });
-    this.v_isLoggedIn = true;
+    
   }
 
   login_org(email: string, password: string) {
+    
     this.afAuth.signInWithEmailAndPassword(email, password)
       .catch((error) => {
         this.eventAuthError.next(error);
@@ -70,6 +72,7 @@ export class AuthService {
           this.db.doc(`Organizations/${userCredentials.user.uid}`).get()
             .toPromise().then(res => {
               if (res.exists) {
+                this.o_isLoggedIn = true;
                 this.router.navigate(['/organization'])
               } else {
                 let err = "email is not registered as an organization";
@@ -80,7 +83,7 @@ export class AuthService {
             })
         }
       });
-      this.o_isLoggedIn = true;
+    
   }
 
   logout() {

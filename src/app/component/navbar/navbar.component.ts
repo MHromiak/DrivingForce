@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     if (this.authService.v_isLoggedIn) {
       this.router.navigate(['/volunteer'])
     } else if (this.authService.o_isLoggedIn) {
-      this.router.navigate(['organization']);
+      this.router.navigate(['/organization']);
     } else {
       this.router.navigate(['/home/']);
     }
