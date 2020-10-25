@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'spring3300pr2'`, () => {
+  it(`should have as title 'DrivingForce'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('spring3300pr2');
+    expect(app.title).toEqual('DrivingForce');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('spring3300pr2 app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('DrivingForce app is running!');
   });
 });

@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "spring3300pr2",
-      "public": "dist/spring3300pr2",
+      "target": "DrivingForce",
+      "public": "dist/DrivingForce",
       "ignore": [
         "firebase.json",
         "**/.*",

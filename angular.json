@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spring3300pr2": {
+    "DrivingForce": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/spring3300pr2",
+            "outputPath": "dist/DrivingForce",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spring3300pr2:build"
+            "browserTarget": "DrivingForce:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spring3300pr2:build:production"
+              "browserTarget": "DrivingForce:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spring3300pr2:build"
+            "browserTarget": "DrivingForce:build"
           }
         },
         "test": {
@@ -119,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "spring3300pr2:serve"
+            "devServerTarget": "DrivingForce:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "spring3300pr2:serve:production"
+              "devServerTarget": "DrivingForce:serve:production"
             }
           }
         },
@@ -134,7 +134,7 @@
       }
     }
   },
-  "defaultProject": "spring3300pr2",
+  "defaultProject": "DrivingForce",
   "cli": {
     "analytics": false
   }
