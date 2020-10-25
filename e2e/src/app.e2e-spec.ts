@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('spring3300pr2 app is running!');
+    expect(page.getTitleText()).toEqual('DrivingForce app is running!');
   });
 
   afterEach(async () => {
