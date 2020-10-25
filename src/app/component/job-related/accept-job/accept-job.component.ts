@@ -80,14 +80,16 @@ export class AcceptJobComponent implements OnInit {
       description: 'We will be holding an online class for sewing Masks to send to hospitals and to people whocannot afford them. Sewing Machine is recommended, but not required. All masks that arecreated will be picked up the next day by our staff and distributed.',
       img: '../../assets/mask.jpeg'
     },
-    { title: 'Help me, Georgia Tech won\'t let go',
-      date: "Now",
-      time: "always",
-      location: "everywhere",
-      description: "I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE",
-      img: '../../assets/help.jpeg'
-    }
+    // { title: 'Help me, Georgia Tech won\'t let go',
+    //   date: "Now",
+    //   time: "always",
+    //   location: "everywhere",
+    //   description: "I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE I CAN'T GRADUATE",
+    //   img: '../../assets/help.jpeg'
+    // }
     
+    //Wow! You found an easter egg! One of the group members was considering dropping out, so we let him vent with this and
+    //stood by him and helped him through the semester.
   ];
   slides: any = [[]];
 

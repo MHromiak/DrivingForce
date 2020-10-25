@@ -39,24 +39,24 @@ export class AuthService {
       .catch((error) => {
         this.eventAuthError.next(error);
         console.log(error);
-      })
-      .then(userCredentials => {
-        if(userCredentials) {
-          this.user.uid = userCredentials.user.uid;
-          this.db.doc(`Volunteers/${userCredentials.user.uid}`).get()
-            .toPromise().then(res => {
-            if (res.exists) {
+      });
+      // .then(userCredentials => {
+        // if(userCredentials) {
+        //   this.user.uid = userCredentials.user.uid;
+        //   this.db.doc(`Volunteers/${userCredentials.user.uid}`).get()
+        //     .toPromise().then(res => {
+        //     if (res.exists) {
               this.v_isLoggedIn = true;
               this.router.navigate(['/volunteer'])
-            } else {
-              let err = "email is not registered as a volunteer";
-              throw new Error(err);
-            }
-        }).catch((err) => {
-          this.eventAuthError.next(err);
-        });
-      }
-    });
+      //       } else {
+      //         let err = "email is not registered as a volunteer";
+      //         throw new Error(err);
+      //       }
+      //   }).catch((err) => {
+      //     this.eventAuthError.next(err);
+      //   });
+      // }
+    // };//);
     
   }
 
@@ -66,23 +66,23 @@ export class AuthService {
       .catch((error) => {
         this.eventAuthError.next(error);
       })
-      .then(userCredentials => {
-        if(userCredentials) {
-          this.user.uid = userCredentials.user.uid;
-          this.db.doc(`Organizations/${userCredentials.user.uid}`).get()
-            .toPromise().then(res => {
-              if (res.exists) {
+      // .then(userCredentials => {
+        // if(userCredentials) {
+        //   this.user.uid = userCredentials.user.uid;
+        //   this.db.doc(`Organizations/${userCredentials.user.uid}`).get()
+        //     .toPromise().then(res => {
+        //       if (res.exists) {
                 this.o_isLoggedIn = true;
                 this.router.navigate(['/organization'])
-              } else {
-                let err = "email is not registered as an organization";
-                throw new Error(err);
-              }
-            }).catch((error) => {
-              this.eventAuthError.next(error);
-            })
-        }
-      });
+            //   } else {
+            //     let err = "email is not registered as an organization";
+            //     throw new Error(err);
+            //   }
+            // }).catch((error) => {
+            //   this.eventAuthError.next(error);
+            // })
+        // }
+      // };//);
     
   }
 
@@ -101,8 +101,8 @@ export class AuthService {
 
   ////Registration////
   register_org(org_name, address, rep_name, email, pass, passconf) {
-    this.afAuth.createUserWithEmailAndPassword(email, pass)
-      .then(userCredentials => {
+    // this.afAuth.createUserWithEmailAndPassword(email, pass)
+    //   .then(userCredentials => {
         if (pass !== passconf) throw Error("Passwords do not match");
 
         this.user = {};
@@ -112,26 +112,26 @@ export class AuthService {
         this.user.pass = pass;
         this.user.address = address;
 
-        userCredentials.user.updateProfile({
-          displayName: org_name
-        });
+        // userCredentials.user.updateProfile({
+        //   displayName: org_name
+        // });
 
         console.log(this.user);
 
-        this.insertOrgData(userCredentials)
-          .then(() => {
-            this.o_isLoggedIn = true;
-            this.router.navigate(['/organization']);
-          })
-      }).catch((error) => {
-        console.log(error);
-        this.eventAuthError.next(error);
-      });
+        // this.insertOrgData(userCredentials)
+          //.then(() => {
+        this.o_isLoggedIn = true;
+        this.router.navigate(['/organization']);
+          //})
+      // }).catch((error) => {
+      //   console.log(error);
+      //   this.eventAuthError.next(error);
+      // });
   }
 
   register_vol(first, last, email, ph, pass, passconf) {
-    this.afAuth.createUserWithEmailAndPassword(email, pass)
-      .then(userCredentials => {
+    // this.afAuth.createUserWithEmailAndPassword(email, pass)
+    //   .then(userCredentials => {
         if (pass !== passconf) throw Error("Passwords do not match");
 
         this.user = {};
@@ -141,18 +141,18 @@ export class AuthService {
         this.user.firstname = first;
         this.user.lastname = last;
 
-        userCredentials.user.updateProfile({
-          displayName: first + " " + last
-        });
+        // userCredentials.user.updateProfile({
+        //   displayName: first + " " + last
+        // });
 
-        this.insertVolunteerData(userCredentials)
-          .then(() => {
+        // this.insertVolunteerData(userCredentials)
+          //.then(() => {
             this.v_isLoggedIn = true;
             this.router.navigate(['/volunteer']);
-          })
-      }).catch((error) => {
-        this.eventAuthError.next(error);
-      });
+          //})
+      // }).catch((error) => {
+      //   this.eventAuthError.next(error);
+      // });
   }
 
   insertOrgData(userCredential: firebase.auth.UserCredential) {
